@@ -1,0 +1,22 @@
+{
+  "id": "guidelines/safety-documentation",
+  "title": "Safety Documentation Guidelines",
+  "description": "Comprehensive documentation is essential for effective safety management, regulatory compliance, and continuous improvement.",
+  "source": "@site/docs/guidelines/safety-documentation.md",
+  "sourceDirName": "guidelines",
+  "slug": "/guidelines/safety-documentation",
+  "permalink": "/docs/guidelines/safety-documentation",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Risk Assessment Guidelines",
+    "permalink": "/docs/guidelines/risk-assessment"
+  }
+}

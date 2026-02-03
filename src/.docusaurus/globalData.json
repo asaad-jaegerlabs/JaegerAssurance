@@ -1,0 +1,68 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/docs",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/docs",
+          "mainDocId": "intro",
+          "docs": [
+            {
+              "id": "fault-trees",
+              "path": "/docs/fault-trees",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "gsn",
+              "path": "/docs/gsn",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "guidelines/hazard-identification",
+              "path": "/docs/guidelines/hazard-identification",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "guidelines/risk-assessment",
+              "path": "/docs/guidelines/risk-assessment",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "guidelines/safety-documentation",
+              "path": "/docs/guidelines/safety-documentation",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "hazards",
+              "path": "/docs/hazards",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "intro",
+              "path": "/docs/intro",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "performance-indicators",
+              "path": "/docs/performance-indicators",
+              "sidebar": "tutorialSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "tutorialSidebar": {
+              "link": {
+                "path": "/docs/intro",
+                "label": "Introduction"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}

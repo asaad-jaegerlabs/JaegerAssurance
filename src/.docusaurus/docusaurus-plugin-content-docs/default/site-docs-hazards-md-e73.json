@@ -1,0 +1,26 @@
+{
+  "id": "hazards",
+  "title": "Hazard Information",
+  "description": "The Hazard Information module provides a comprehensive registry for tracking and managing identified hazards throughout your system's lifecycle.",
+  "source": "@site/docs/hazards.md",
+  "sourceDirName": ".",
+  "slug": "/hazards",
+  "permalink": "/docs/hazards",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Introduction",
+    "permalink": "/docs/intro"
+  },
+  "next": {
+    "title": "Fault Tree Analysis",
+    "permalink": "/docs/fault-trees"
+  }
+}

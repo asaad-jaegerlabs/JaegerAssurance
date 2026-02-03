@@ -1,0 +1,26 @@
+{
+  "id": "guidelines/risk-assessment",
+  "title": "Risk Assessment Guidelines",
+  "description": "Risk assessment is the process of evaluating identified hazards to determine their significance and prioritize mitigation efforts.",
+  "source": "@site/docs/guidelines/risk-assessment.md",
+  "sourceDirName": "guidelines",
+  "slug": "/guidelines/risk-assessment",
+  "permalink": "/docs/guidelines/risk-assessment",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Hazard Identification Guidelines",
+    "permalink": "/docs/guidelines/hazard-identification"
+  },
+  "next": {
+    "title": "Safety Documentation Guidelines",
+    "permalink": "/docs/guidelines/safety-documentation"
+  }
+}

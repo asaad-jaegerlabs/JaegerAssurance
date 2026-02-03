@@ -1,0 +1,26 @@
+{
+  "id": "gsn",
+  "title": "Goal Structured Notation (GSN)",
+  "description": "Goal Structured Notation is a graphical argumentation notation used to explicitly document safety arguments and their supporting evidence.",
+  "source": "@site/docs/gsn.md",
+  "sourceDirName": ".",
+  "slug": "/gsn",
+  "permalink": "/docs/gsn",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "sidebar_position": 5
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Safety Performance Indicators",
+    "permalink": "/docs/performance-indicators"
+  },
+  "next": {
+    "title": "Hazard Identification Guidelines",
+    "permalink": "/docs/guidelines/hazard-identification"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "guidelines/hazard-identification",
+  "title": "Hazard Identification Guidelines",
+  "description": "This guide provides best practices for identifying and documenting hazards in your safety management system.",
+  "source": "@site/docs/guidelines/hazard-identification.md",
+  "sourceDirName": "guidelines",
+  "slug": "/guidelines/hazard-identification",
+  "permalink": "/docs/guidelines/hazard-identification",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Goal Structured Notation (GSN)",
+    "permalink": "/docs/gsn"
+  },
+  "next": {
+    "title": "Risk Assessment Guidelines",
+    "permalink": "/docs/guidelines/risk-assessment"
+  }
+}

@@ -1,0 +1,590 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+/* =============================================================================
+   TACTICAL DESIGN SYSTEM - Anduril-Inspired Dark Command Center Aesthetic
+   ============================================================================= */
+
+@layer base {
+  :root {
+    /* Background Hierarchy (5-level) */
+    --bg-base: #0a0e14;
+    --bg-surface: #0d1117;
+    --bg-elevated: #111922;
+    --bg-overlay: #151d28;
+    --bg-hover: #1a2433;
+
+    /* Core shadcn tokens - mapped to tactical dark palette */
+    --background: 213 50% 5%;
+    --foreground: 210 20% 88%;
+    --card: 213 40% 7%;
+    --card-foreground: 210 20% 88%;
+    --popover: 213 40% 8%;
+    --popover-foreground: 210 20% 88%;
+    --primary: 199 89% 60%;
+    --primary-foreground: 213 50% 5%;
+    --secondary: 213 30% 14%;
+    --secondary-foreground: 210 20% 80%;
+    --muted: 213 30% 14%;
+    --muted-foreground: 215 15% 52%;
+    --accent: 213 30% 14%;
+    --accent-foreground: 210 20% 88%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 199 60% 20%;
+    --input: 199 60% 20%;
+    --input-background: 213 40% 7%;
+    --ring: 199 89% 48%;
+    --radius: 0.25rem;
+    --switch-background: 213 30% 20%;
+
+    /* === SEMANTIC ACCENT COLORS === */
+
+    /* Tactical Green - nominal/success */
+    --tactical-green: #22c55e;
+    --tactical-green-dim: rgba(34, 197, 94, 0.1);
+    --tactical-green-glow: rgba(34, 197, 94, 0.4);
+
+    /* Electric Blue - primary/interactive */
+    --electric-blue: #38bdf8;
+    --electric-blue-dim: rgba(56, 189, 248, 0.1);
+    --electric-blue-glow: rgba(56, 189, 248, 0.4);
+
+    /* Warning Amber - caution */
+    --warning-amber: #f59e0b;
+    --warning-amber-dim: rgba(245, 158, 11, 0.1);
+    --warning-amber-glow: rgba(245, 158, 11, 0.4);
+
+    /* Critical Red - danger/destructive */
+    --critical-red: #ef4444;
+    --critical-red-dim: rgba(239, 68, 68, 0.1);
+    --critical-red-glow: rgba(239, 68, 68, 0.4);
+
+    /* Info Cyan - informational */
+    --info-cyan: #06b6d4;
+    --info-cyan-dim: rgba(6, 182, 212, 0.1);
+    --info-cyan-glow: rgba(6, 182, 212, 0.4);
+
+    /* Chart Colors */
+    --chart-1: var(--electric-blue);
+    --chart-2: var(--tactical-green);
+    --chart-3: var(--warning-amber);
+    --chart-4: var(--critical-red);
+    --chart-5: var(--info-cyan);
+
+    /* Typography */
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
+
+    /* Docusaurus overrides */
+    --ifm-color-primary: #38bdf8;
+    --ifm-color-primary-dark: #0ea5e9;
+    --ifm-color-primary-darker: #0284c7;
+    --ifm-color-primary-darkest: #0369a1;
+    --ifm-color-primary-light: #7dd3fc;
+    --ifm-color-primary-lighter: #bae6fd;
+    --ifm-color-primary-lightest: #e0f2fe;
+    --ifm-code-font-size: 95%;
+    --ifm-font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
+    --ifm-background-color: var(--bg-base);
+    --docusaurus-highlighted-code-line-bg: rgba(56, 189, 248, 0.1);
+  }
+
+  /* Force dark mode as default - the tactical aesthetic is dark-first */
+  [data-theme='dark'],
+  :root {
+    color-scheme: dark;
+  }
+
+  [data-theme='dark'] {
+    --background: 213 50% 5%;
+    --foreground: 210 20% 88%;
+    --card: 213 40% 7%;
+    --card-foreground: 210 20% 88%;
+    --popover: 213 40% 8%;
+    --popover-foreground: 210 20% 88%;
+    --primary: 199 89% 60%;
+    --primary-foreground: 213 50% 5%;
+    --secondary: 213 30% 14%;
+    --secondary-foreground: 210 20% 80%;
+    --muted: 213 30% 14%;
+    --muted-foreground: 215 15% 52%;
+    --accent: 213 30% 14%;
+    --accent-foreground: 210 20% 88%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 199 60% 20%;
+    --input: 199 60% 20%;
+    --input-background: 213 40% 7%;
+    --ring: 199 89% 48%;
+    --switch-background: 213 30% 20%;
+
+    /* Docusaurus dark mode */
+    --ifm-color-primary: #38bdf8;
+    --ifm-color-primary-dark: #0ea5e9;
+    --ifm-color-primary-darker: #0284c7;
+    --ifm-color-primary-darkest: #0369a1;
+    --ifm-color-primary-light: #7dd3fc;
+    --ifm-color-primary-lighter: #bae6fd;
+    --ifm-color-primary-lightest: #e0f2fe;
+    --docusaurus-highlighted-code-line-bg: rgba(56, 189, 248, 0.15);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Force dark background on html and body */
+  html,
+  body {
+    background-color: var(--bg-base) !important;
+    color: hsl(var(--foreground)) !important;
+  }
+}
+
+/* =============================================================================
+   KEYFRAME ANIMATIONS
+   ============================================================================= */
+
+@keyframes tactical-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes tactical-glow {
+  0%, 100% { box-shadow: 0 0 4px var(--electric-blue-glow); }
+  50% { box-shadow: 0 0 12px var(--electric-blue-glow), 0 0 24px rgba(56, 189, 248, 0.15); }
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes data-stream {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 -200px; }
+}
+
+@keyframes status-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes border-glow {
+  0%, 100% { border-color: rgba(56, 189, 248, 0.12); }
+  50% { border-color: rgba(56, 189, 248, 0.25); }
+}
+
+/* =============================================================================
+   STATUS DOT CLASSES
+   ============================================================================= */
+
+.status-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.status-dot-nominal {
+  background-color: var(--tactical-green);
+  box-shadow: 0 0 6px var(--tactical-green-glow);
+  animation: status-blink 2s ease-in-out infinite;
+}
+
+.status-dot-warning {
+  background-color: var(--warning-amber);
+  box-shadow: 0 0 6px var(--warning-amber-glow);
+  animation: status-blink 1.5s ease-in-out infinite;
+}
+
+.status-dot-critical {
+  background-color: var(--critical-red);
+  box-shadow: 0 0 6px var(--critical-red-glow);
+  animation: status-blink 1s ease-in-out infinite;
+}
+
+.status-dot-info {
+  background-color: var(--electric-blue);
+  box-shadow: 0 0 6px var(--electric-blue-glow);
+}
+
+/* =============================================================================
+   VISUAL EFFECT CLASSES
+   ============================================================================= */
+
+/* Tactical Grid Background */
+.tactical-grid {
+  background-color: var(--bg-base);
+  background-image:
+    linear-gradient(rgba(56, 189, 248, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.03) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Tactical Divider */
+.tactical-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(56, 189, 248, 0.2) 20%,
+    rgba(56, 189, 248, 0.4) 50%,
+    rgba(56, 189, 248, 0.2) 80%,
+    transparent
+  );
+}
+
+/* Corner Brackets (HUD-style) */
+.tactical-corners {
+  position: relative;
+}
+
+.tactical-corners::before,
+.tactical-corners::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-color: var(--electric-blue);
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.tactical-corners::before {
+  top: -1px;
+  left: -1px;
+  border-top: 2px solid;
+  border-left: 2px solid;
+}
+
+.tactical-corners::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+}
+
+.tactical-corners-green::before,
+.tactical-corners-green::after {
+  border-color: var(--tactical-green);
+}
+
+.tactical-corners-amber::before,
+.tactical-corners-amber::after {
+  border-color: var(--warning-amber);
+}
+
+.tactical-corners-red::before,
+.tactical-corners-red::after {
+  border-color: var(--critical-red);
+}
+
+/* Glow Effects */
+.glow-blue {
+  box-shadow: 0 0 8px var(--electric-blue-glow), inset 0 0 8px rgba(56, 189, 248, 0.05);
+}
+
+.glow-green {
+  box-shadow: 0 0 8px var(--tactical-green-glow), inset 0 0 8px rgba(34, 197, 94, 0.05);
+}
+
+.glow-amber {
+  box-shadow: 0 0 8px var(--warning-amber-glow), inset 0 0 8px rgba(245, 158, 11, 0.05);
+}
+
+.glow-red {
+  box-shadow: 0 0 8px var(--critical-red-glow), inset 0 0 8px rgba(239, 68, 68, 0.05);
+}
+
+/* Tactical Border Gradient */
+.tactical-border-gradient {
+  border-image: linear-gradient(
+    180deg,
+    rgba(56, 189, 248, 0.3),
+    rgba(56, 189, 248, 0.05)
+  ) 1;
+}
+
+/* Scanline Overlay */
+.scanline-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.scanline-overlay::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(56, 189, 248, 0.015) 2px,
+    rgba(56, 189, 248, 0.015) 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* =============================================================================
+   TYPOGRAPHY UTILITY CLASSES
+   ============================================================================= */
+
+.data-value-large {
+  font-family: var(--font-mono);
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.data-value {
+  font-family: var(--font-mono);
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+}
+
+.data-label {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: hsl(var(--muted-foreground));
+}
+
+.tactical-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+}
+
+.tactical-chip-up {
+  color: var(--tactical-green);
+  background: var(--tactical-green-dim);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.tactical-chip-down {
+  color: var(--critical-red);
+  background: var(--critical-red-dim);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.tactical-chip-neutral {
+  color: var(--warning-amber);
+  background: var(--warning-amber-dim);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+/* =============================================================================
+   TYPOGRAPHY HIERARCHY
+   ============================================================================= */
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 2.25rem;
+  letter-spacing: -0.03em;
+  color: hsl(var(--foreground));
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 2rem;
+  letter-spacing: -0.02em;
+  color: hsl(var(--foreground));
+}
+
+h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.75rem;
+  letter-spacing: -0.01em;
+  color: hsl(var(--foreground));
+}
+
+h4 {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+  letter-spacing: 0;
+  color: hsl(var(--foreground));
+}
+
+/* =============================================================================
+   CUSTOM SCROLLBAR STYLING
+   ============================================================================= */
+
+/* Thin scrollbar variant */
+.scrollbar-thin::-webkit-scrollbar,
+::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(56, 189, 248, 0.15);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(56, 189, 248, 0.3);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(56, 189, 248, 0.15) var(--bg-surface);
+}
+
+/* =============================================================================
+   DOCUSAURUS OVERRIDES
+   ============================================================================= */
+
+/* Docusaurus specific - don't apply bg to the main wrapper */
+.main-wrapper {
+  background: transparent !important;
+}
+
+/* Override Docusaurus navbar to work with our theme */
+.navbar {
+  background-color: var(--bg-surface) !important;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.12) !important;
+}
+
+[data-theme='dark'] .navbar {
+  background-color: var(--bg-surface) !important;
+}
+
+.navbar__title {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+}
+
+.navbar__link {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+/* Fix for tables in dashboard */
+.dashboard-content table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* =============================================================================
+   FADE-IN ANIMATION FOR CARDS
+   ============================================================================= */
+
+[data-slot="card"] {
+  animation: fade-in-up 0.3s ease-out;
+}
+
+/* =============================================================================
+   REDUCED MOTION PREFERENCES
+   ============================================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .status-dot-nominal,
+  .status-dot-warning,
+  .status-dot-critical {
+    animation: none;
+  }
+
+  .scanline-overlay::after {
+    display: none;
+  }
+
+  [data-slot="card"] {
+    animation: none;
+  }
+}
+
+/* =============================================================================
+   RECHARTS DARK THEME OVERRIDES
+   ============================================================================= */
+
+.recharts-cartesian-grid-bg {
+  fill: transparent;
+}
+
+.recharts-cartesian-grid line {
+  stroke: rgba(56, 189, 248, 0.08) !important;
+}
+
+.recharts-text {
+  fill: hsl(var(--muted-foreground)) !important;
+  font-family: var(--font-mono) !important;
+  font-size: 0.6875rem !important;
+}
+
+.recharts-tooltip-wrapper .recharts-default-tooltip {
+  background-color: var(--bg-overlay) !important;
+  border: 1px solid rgba(56, 189, 248, 0.2) !important;
+  border-radius: 4px !important;
+  font-family: var(--font-mono) !important;
+  font-size: 0.75rem !important;
+}
+
+.recharts-legend-item-text {
+  color: hsl(var(--muted-foreground)) !important;
+  font-family: var(--font-mono) !important;
+  font-size: 0.6875rem !important;
+}

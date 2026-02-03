@@ -1,0 +1,26 @@
+{
+  "id": "fault-trees",
+  "title": "Fault Tree Analysis",
+  "description": "Fault Tree Analysis (FTA) is a top-down, deductive failure analysis method used to determine the causes of system-level failures.",
+  "source": "@site/docs/fault-trees.md",
+  "sourceDirName": ".",
+  "slug": "/fault-trees",
+  "permalink": "/docs/fault-trees",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Hazard Information",
+    "permalink": "/docs/hazards"
+  },
+  "next": {
+    "title": "Safety Performance Indicators",
+    "permalink": "/docs/performance-indicators"
+  }
+}
